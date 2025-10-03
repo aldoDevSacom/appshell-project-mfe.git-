@@ -1,0 +1,23 @@
+{
+  "imports": {
+    "@angular/common": "_angular_common.R1MS0qJYt2-dev.js",
+    "@angular/common/http": "_angular_common_http.9dAKo-wkGY-dev.js",
+    "@angular/core": "_angular_core.xBkQFd5GlF-dev.js",
+    "@angular/core/primitives/di": "_angular_core_primitives_di.mogAUCcIpO-dev.js",
+    "@angular/core/primitives/signals": "_angular_core_primitives_signals.5XOqHw-WnS-dev.js",
+    "@angular/core/rxjs-interop": "_angular_core_rxjs_interop.HktffU7B4o-dev.js",
+    "@angular/forms": "_angular_forms.nhc4O5Z1pG-dev.js",
+    "@angular/platform-browser": "_angular_platform_browser.9Sg5fnsAPL-dev.js",
+    "@angular/router": "_angular_router.JtviJZRlZR-dev.js",
+    "rxjs": "rxjs.EyqZHEpMLA-dev.js",
+    "rxjs/operators": "rxjs_operators.Gw3kHyjeFn-dev.js",
+    "tslib": "tslib.F_vRZ_qyws-dev.js",
+    "@nf-internal/chunk-5DWKIDR3": "chunk-5DWKIDR3.js",
+    "@nf-internal/chunk-GIH3LZ2C": "chunk-GIH3LZ2C.js",
+    "@nf-internal/chunk-JF62OTMA": "chunk-JF62OTMA.js",
+    "@nf-internal/chunk-4ZALGADV": "chunk-4ZALGADV.js",
+    "@nf-internal/chunk-6LPEVOYQ": "chunk-6LPEVOYQ.js",
+    "@nf-internal/chunk-ZFGBFAA5": "chunk-ZFGBFAA5.js",
+    "@nf-internal/chunk-WDMUDEB6": "chunk-WDMUDEB6.js"
+  }
+}

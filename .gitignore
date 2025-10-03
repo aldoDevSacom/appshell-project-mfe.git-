@@ -1,0 +1,9 @@
+# Node.js
+node_modules/
+
+# Optional: Log files, build artifacts, etc.
+npm-debug.log*
+.DS_Store
+build/
+dist/
+tmp/

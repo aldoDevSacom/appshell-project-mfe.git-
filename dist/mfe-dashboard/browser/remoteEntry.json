@@ -1,0 +1,135 @@
+{
+  "name": "mfe-dashboard",
+  "shared": [
+    {
+      "packageName": "@angular/common",
+      "outFileName": "_angular_common.CPKZjNAroC-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/common/http",
+      "outFileName": "_angular_common_http.nDOIfdHBZI-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/core",
+      "outFileName": "_angular_core.cpmLK8HTcy-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/core/primitives/di",
+      "outFileName": "_angular_core_primitives_di.cCulzTvb66-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/core/primitives/signals",
+      "outFileName": "_angular_core_primitives_signals.YKW-k5YhKN-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/platform-browser",
+      "outFileName": "_angular_platform_browser.SPrZTtPr7p-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/router",
+      "outFileName": "_angular_router.njMeO44sQy-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "rxjs",
+      "outFileName": "rxjs.CXCmfi9zXK-dev.js",
+      "requiredVersion": "~7.8.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "7.8.2"
+    },
+    {
+      "packageName": "rxjs/operators",
+      "outFileName": "rxjs_operators.bhG0dNqlqU-dev.js",
+      "requiredVersion": "~7.8.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "7.8.2"
+    },
+    {
+      "packageName": "tslib",
+      "outFileName": "tslib.XyEH-AUeX_-dev.js",
+      "requiredVersion": "^2.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "2.8.1"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-GIH3LZ2C",
+      "outFileName": "chunk-GIH3LZ2C.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-6LPEVOYQ",
+      "outFileName": "chunk-6LPEVOYQ.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-V5X25UG3",
+      "outFileName": "chunk-V5X25UG3.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-5DWKIDR3",
+      "outFileName": "chunk-5DWKIDR3.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-WDMUDEB6",
+      "outFileName": "chunk-WDMUDEB6.js"
+    }
+  ],
+  "exposes": [
+    {
+      "key": "./Component",
+      "outFileName": "Component.js",
+      "dev": {
+        "entryPoint": "/Users/aldo/Aldo_en_mi_mac/ADNDigital/AppShell/AppShell-DevSacom/apps/mfe-dashboard/src/app/remote-entry/remote-entry.component.ts"
+      }
+    }
+  ],
+  "buildNotificationsEndpoint": "/@angular-architects/native-federation:build-notifications"
+}

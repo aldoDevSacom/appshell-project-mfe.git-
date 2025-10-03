@@ -1,0 +1,135 @@
+{
+  "name": "mfe-marketing",
+  "shared": [
+    {
+      "packageName": "@angular/common",
+      "outFileName": "_angular_common.d4ogrm1seN-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/common/http",
+      "outFileName": "_angular_common_http.K-Pk9OxznB-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/core",
+      "outFileName": "_angular_core.d7KqO9Dbql-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/core/primitives/di",
+      "outFileName": "_angular_core_primitives_di.3VVsiLGQ9u-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/core/primitives/signals",
+      "outFileName": "_angular_core_primitives_signals.uMEmsUc58T-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/platform-browser",
+      "outFileName": "_angular_platform_browser.Jt0LBP-uyI-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/router",
+      "outFileName": "_angular_router.O7B0fLEVId-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "rxjs",
+      "outFileName": "rxjs.pv7EZ71YAF-dev.js",
+      "requiredVersion": "~7.8.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "7.8.2"
+    },
+    {
+      "packageName": "rxjs/operators",
+      "outFileName": "rxjs_operators.ssgxP2P7bU-dev.js",
+      "requiredVersion": "~7.8.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "7.8.2"
+    },
+    {
+      "packageName": "tslib",
+      "outFileName": "tslib.Xmd4IHrFYV-dev.js",
+      "requiredVersion": "^2.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "2.8.1"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-GIH3LZ2C",
+      "outFileName": "chunk-GIH3LZ2C.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-6LPEVOYQ",
+      "outFileName": "chunk-6LPEVOYQ.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-V5X25UG3",
+      "outFileName": "chunk-V5X25UG3.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-5DWKIDR3",
+      "outFileName": "chunk-5DWKIDR3.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-WDMUDEB6",
+      "outFileName": "chunk-WDMUDEB6.js"
+    }
+  ],
+  "exposes": [
+    {
+      "key": "./Component",
+      "outFileName": "Component.js",
+      "dev": {
+        "entryPoint": "/Users/aldo/Aldo_en_mi_mac/ADNDigital/AppShell/AppShell-DevSacom/apps/mfe-marketing/src/app/remote-entry/remote-entry.component.ts"
+      }
+    }
+  ],
+  "buildNotificationsEndpoint": "/@angular-architects/native-federation:build-notifications"
+}

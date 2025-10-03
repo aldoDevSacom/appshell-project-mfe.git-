@@ -1,0 +1,31 @@
+{
+  "hash": "171f4a92",
+  "configHash": "0e60a288",
+  "lockfileHash": "1cd2e54f",
+  "browserHash": "74356caa",
+  "optimized": {
+    "@angular-architects/native-federation": {
+      "src": "../../../../../../node_modules/@angular-architects/native-federation/src/index.js",
+      "file": "@angular-architects_native-federation.js",
+      "fileHash": "a61731d6",
+      "needsInterop": false
+    },
+    "es-module-shims": {
+      "src": "../../../../../../node_modules/es-module-shims/dist/es-module-shims.js",
+      "file": "es-module-shims.js",
+      "fileHash": "201b1d98",
+      "needsInterop": true
+    },
+    "zone.js": {
+      "src": "../../../../../../node_modules/zone.js/fesm2015/zone.js",
+      "file": "zone__js.js",
+      "fileHash": "616dc8d2",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-Y5RQAIA6": {
+      "file": "chunk-Y5RQAIA6.js"
+    }
+  }
+}

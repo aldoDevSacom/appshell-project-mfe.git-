@@ -1,0 +1,159 @@
+{
+  "name": "",
+  "shared": [
+    {
+      "packageName": "@angular/common",
+      "outFileName": "_angular_common.R1MS0qJYt2-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/common/http",
+      "outFileName": "_angular_common_http.9dAKo-wkGY-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/core",
+      "outFileName": "_angular_core.xBkQFd5GlF-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/core/primitives/di",
+      "outFileName": "_angular_core_primitives_di.mogAUCcIpO-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/core/primitives/signals",
+      "outFileName": "_angular_core_primitives_signals.5XOqHw-WnS-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/core/rxjs-interop",
+      "outFileName": "_angular_core_rxjs_interop.HktffU7B4o-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/forms",
+      "outFileName": "_angular_forms.nhc4O5Z1pG-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/platform-browser",
+      "outFileName": "_angular_platform_browser.9Sg5fnsAPL-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "@angular/router",
+      "outFileName": "_angular_router.JtviJZRlZR-dev.js",
+      "requiredVersion": "^20.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "20.3.3"
+    },
+    {
+      "packageName": "rxjs",
+      "outFileName": "rxjs.EyqZHEpMLA-dev.js",
+      "requiredVersion": "~7.8.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "7.8.2"
+    },
+    {
+      "packageName": "rxjs/operators",
+      "outFileName": "rxjs_operators.Gw3kHyjeFn-dev.js",
+      "requiredVersion": "~7.8.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "7.8.2"
+    },
+    {
+      "packageName": "tslib",
+      "outFileName": "tslib.F_vRZ_qyws-dev.js",
+      "requiredVersion": "^2.3.0",
+      "singleton": true,
+      "strictVersion": true,
+      "version": "2.8.1"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-5DWKIDR3",
+      "outFileName": "chunk-5DWKIDR3.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-GIH3LZ2C",
+      "outFileName": "chunk-GIH3LZ2C.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-JF62OTMA",
+      "outFileName": "chunk-JF62OTMA.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-4ZALGADV",
+      "outFileName": "chunk-4ZALGADV.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-6LPEVOYQ",
+      "outFileName": "chunk-6LPEVOYQ.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-ZFGBFAA5",
+      "outFileName": "chunk-ZFGBFAA5.js"
+    },
+    {
+      "singleton": false,
+      "strictVersion": false,
+      "requiredVersion": "0.0.0",
+      "version": "0.0.0",
+      "packageName": "@nf-internal/chunk-WDMUDEB6",
+      "outFileName": "chunk-WDMUDEB6.js"
+    }
+  ],
+  "exposes": [],
+  "buildNotificationsEndpoint": "/@angular-architects/native-federation:build-notifications"
+}

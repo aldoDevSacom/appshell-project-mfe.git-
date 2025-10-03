@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["apps/mfe-dashboard/src/app/components/dashboard-content/dashboard-content.spec.ts"],
+  "sourcesContent": ["import { ComponentFixture, TestBed } from '@angular/core/testing';\n\nimport { DashboardContentComponent } from './dashboard-content';\n\ndescribe('DashboardContentComponent', () => {\n  let component: DashboardContentComponent;\n  let fixture: ComponentFixture<DashboardContentComponent>;\n\n  beforeEach(async () => {\n    await TestBed.configureTestingModule({\n      imports: [DashboardContentComponent]\n    }).compileComponents();\n\n    fixture = TestBed.createComponent(DashboardContentComponent);\n    component = fixture.componentInstance;\n    fixture.detectChanges();\n  });\n\n  it('renders the dashboard title', () => {\n    const heading = fixture.nativeElement.querySelector('p');\n    expect(heading?.textContent).toContain('Dashboard');\n  });\n});\n"],
+  "mappings": ";;;;;;;;;;;;;;;;AAAA;;;AAEA;AAEA,aAAS,6BAA6B,MAAK;AACzC,UAAI;AACJ,UAAI;AAEJ,iBAAW,MAAW;AACpB,cAAM,QAAQ,uBAAuB;UACnC,SAAS,CAAC,yBAAyB;SACpC,EAAE,kBAAiB;AAEpB,kBAAU,QAAQ,gBAAgB,yBAAyB;AAC3D,oBAAY,QAAQ;AACpB,gBAAQ,cAAa;MACvB,EAAC;AAED,SAAG,+BAA+B,MAAK;AACrC,cAAM,UAAU,QAAQ,cAAc,cAAc,GAAG;AACvD,eAAO,SAAS,WAAW,EAAE,UAAU,WAAW;MACpD,CAAC;IACH,CAAC;;;",
+  "names": []
+}

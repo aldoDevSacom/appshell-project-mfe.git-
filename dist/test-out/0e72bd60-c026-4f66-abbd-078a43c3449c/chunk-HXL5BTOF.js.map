@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["angular:jit:template:apps/mfe-dashboard/src/app/components/dashboard-layout/dashboard-layout.html", "angular:jit:style:apps/mfe-dashboard/src/app/components/dashboard-layout/dashboard-layout.css", "apps/mfe-dashboard/src/app/components/dashboard-layout/dashboard-layout.ts"],
+  "sourcesContent": ["<app-dashboard-content></app-dashboard-content>\n", "/* apps/mfe-dashboard/src/app/components/dashboard-layout/dashboard-layout.css */\n/*# sourceMappingURL=dashboard-layout.css.map */\n", "import { ChangeDetectionStrategy, Component } from '@angular/core';\n\nimport { DashboardContentComponent } from '../dashboard-content/dashboard-content';\n\n@Component({\n  selector: 'app-dashboard-layout',\n  standalone: true,\n  imports: [DashboardContentComponent],\n  templateUrl: './dashboard-layout.html',\n  styleUrl: './dashboard-layout.css',\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nexport class DashboardLayout {}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;ACAA,IAAAA;AAAA,IAAAC,yBAAA;AAAA;AAAA,IAAAD,4BAAA;AAAA;AAAA;;;ICYa;;;;;;;AAZb;AAEA;AAUO,IAAM,kBAAN,MAAME,iBAAe;;AAAf,sBAAe,WAAA;MAR3B,UAAU;QACT,UAAU;QACV,YAAY;QACZ,SAAS,CAAC,yBAAyB;QACnC,UAAA;QAEA,iBAAiB,wBAAwB;;OAC1C;OACY,eAAe;;;",
+  "names": ["dashboard_layout_default", "init_dashboard_layout", "DashboardLayout"]
+}
