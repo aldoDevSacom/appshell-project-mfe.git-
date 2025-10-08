@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, ElementRef, EventEmitter, HostListener, Output, ViewChild, computed, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgClass, NgFor, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 import { IconComponent, ButtonComponent } from '@appshell/ui';
@@ -11,6 +12,7 @@ import { DASHBOARD_ICONS, DashboardIconName } from '../dashboard-icons';
 const MODULE_GRADIENTS: Record<string, string> = {
   dashboard: 'from-indigo-500 to-purple-500',
   tasks: 'from-pink-500 to-rose-500',
+  billing: 'from-amber-500 to-orange-500',
   iam: 'from-emerald-500 to-teal-500',
   marketing: 'from-sky-500 to-indigo-500'
 };
@@ -18,7 +20,7 @@ const MODULE_GRADIENTS: Record<string, string> = {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, NgClass, NgFor, NgIf, IconComponent, ButtonComponent],
+  imports: [FormsModule, NgClass, NgFor, NgIf, RouterLink, IconComponent, ButtonComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -49,6 +51,7 @@ export class HeaderComponent {
         id: item.id,
         name: item.label,
         icon: item.icon,
+        route: item.route,
         gradient: MODULE_GRADIENTS[item.id] ?? 'from-purple-500 to-indigo-500'
       }))
   );

@@ -96,6 +96,7 @@ export class AuthService {
       claims: [
         'module:dashboard',
         'module:tasks',
+        'module:billing',
         'module:iam',
         'module:marketing'
       ]

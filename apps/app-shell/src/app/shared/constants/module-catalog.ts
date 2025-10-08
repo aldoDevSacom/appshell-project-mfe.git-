@@ -8,8 +8,8 @@ export const MODULE_CATALOG: MenuItem[] = [
     kind: 'route',
     category: 'main',
     route: '/dashboard',
-    remoteName: 'mfe-dashboard',
-    requiredClaim: 'module:dashboard'
+    remoteName: 'mfe-dashboard'
+    // Público - sin requiredClaim
   },
   {
     id: 'tasks',
@@ -20,6 +20,16 @@ export const MODULE_CATALOG: MenuItem[] = [
     route: '/tasks',
     remoteName: 'mfe-tasks',
     requiredClaim: 'module:tasks'
+  },
+  {
+    id: 'billing',
+    label: 'Billing',
+    icon: 'receipt_long',
+    kind: 'route',
+    category: 'workflow',
+    route: '/billing',
+    remoteName: 'mfe-billing',
+    requiredClaim: 'module:billing'
   },
   {
     id: 'create-order',

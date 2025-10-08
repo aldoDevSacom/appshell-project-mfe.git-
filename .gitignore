@@ -4,6 +4,7 @@ node_modules/
 # Optional: Log files, build artifacts, etc.
 npm-debug.log*
 .DS_Store
+.angular
 build/
 dist/
 tmp/
