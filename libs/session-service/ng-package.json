@@ -1,0 +1,6 @@
+{
+  "dest": "../../../dist/session-service",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  }
+}
