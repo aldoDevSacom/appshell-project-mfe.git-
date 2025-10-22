@@ -1,177 +1,170 @@
 // apps/mfe-iam/src/app/remote-entry/remote-entry.component.ts
-import { ChangeDetectionStrategy as ChangeDetectionStrategy3, Component as Component3 } from "@angular/core";
-import { NgFor } from "@angular/common";
-
-// libs/ui/src/lib/icon/icon.component.ts
-import { ChangeDetectionStrategy, Component, HostBinding, Input } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { NgFor, CommonModule } from "@angular/common";
+import { CardComponent, IconComponent } from "@appshell/ui";
+import { Subscription } from "rxjs";
 import * as i0 from "@angular/core";
-var SIZE_CLASSES = {
-  sm: "text-base",
-  md: "text-2xl",
-  lg: "text-4xl"
-};
-var IconComponent = class _IconComponent {
-  name;
-  size = "md";
-  ariaLabel;
-  get classList() {
-    const sizeClass = SIZE_CLASSES[this.size] ?? SIZE_CLASSES.md;
-    return "inline-flex items-center justify-center text-inherit " + sizeClass;
-  }
-  get ariaHidden() {
-    return this.ariaLabel ? null : "true";
-  }
-  static \u0275fac = function IconComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _IconComponent)();
-  };
-  static \u0275cmp = /* @__PURE__ */ i0.\u0275\u0275defineComponent({ type: _IconComponent, selectors: [["ui-icon"]], hostVars: 2, hostBindings: function IconComponent_HostBindings(rf, ctx) {
-    if (rf & 2) {
-      i0.\u0275\u0275classMap(ctx.classList);
-    }
-  }, inputs: { name: "name", size: "size", ariaLabel: [0, "aria-label", "ariaLabel"] }, decls: 2, vars: 3, consts: [[1, "material-symbols-outlined", "leading-none"]], template: function IconComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      i0.\u0275\u0275domElementStart(0, "span", 0);
-      i0.\u0275\u0275text(1);
-      i0.\u0275\u0275domElementEnd();
-    }
-    if (rf & 2) {
-      i0.\u0275\u0275attribute("aria-hidden", ctx.ariaHidden)("aria-label", ctx.ariaLabel);
-      i0.\u0275\u0275advance();
-      i0.\u0275\u0275textInterpolate1(" ", ctx.name, "\n");
-    }
-  }, styles: ["\n\n/*# sourceMappingURL=icon.component.css.map */"], changeDetection: 0 });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassDebugInfo(IconComponent, { className: "IconComponent", filePath: "libs/ui/src/lib/icon/icon.component.ts", lineNumber: 16 });
-})();
-
-// libs/ui/src/lib/card/card.component.ts
-import { ChangeDetectionStrategy as ChangeDetectionStrategy2, Component as Component2, Input as Input2 } from "@angular/core";
-import { NgIf } from "@angular/common";
-import * as i02 from "@angular/core";
-var _c0 = ["*", [["", "card-actions", ""]]];
-var _c1 = ["*", "[card-actions]"];
-function CardComponent_header_1_p_4_Template(rf, ctx) {
+import * as i1 from "@app/session-service";
+import * as i2 from "@angular/common";
+function RemoteEntryComponent_div_9_div_2_Template(rf, ctx) {
   if (rf & 1) {
-    i02.\u0275\u0275elementStart(0, "p", 7);
-    i02.\u0275\u0275text(1);
-    i02.\u0275\u0275elementEnd();
+    i0.\u0275\u0275elementStart(0, "div", 15);
+    i0.\u0275\u0275text(1);
+    i0.\u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const ctx_r0 = i02.\u0275\u0275nextContext(2);
-    i02.\u0275\u0275advance();
-    i02.\u0275\u0275textInterpolate(ctx_r0.subtitle);
+    const ctx_r0 = i0.\u0275\u0275nextContext(2);
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275textInterpolate1(" Roles: ", ctx_r0.userRoles.join(", "), " ");
   }
 }
-function CardComponent_header_1_Template(rf, ctx) {
+function RemoteEntryComponent_div_9_Template(rf, ctx) {
   if (rf & 1) {
-    i02.\u0275\u0275elementStart(0, "header", 3)(1, "div", 4)(2, "h2", 5);
-    i02.\u0275\u0275text(3);
-    i02.\u0275\u0275elementEnd();
-    i02.\u0275\u0275template(4, CardComponent_header_1_p_4_Template, 2, 1, "p", 6);
-    i02.\u0275\u0275elementEnd();
-    i02.\u0275\u0275projection(5, 1);
-    i02.\u0275\u0275elementEnd();
+    i0.\u0275\u0275elementStart(0, "div", 13);
+    i0.\u0275\u0275text(1);
+    i0.\u0275\u0275template(2, RemoteEntryComponent_div_9_div_2_Template, 2, 1, "div", 14);
+    i0.\u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const ctx_r0 = i02.\u0275\u0275nextContext();
-    i02.\u0275\u0275advance(3);
-    i02.\u0275\u0275textInterpolate(ctx_r0.title);
-    i02.\u0275\u0275advance();
-    i02.\u0275\u0275property("ngIf", ctx_r0.subtitle);
+    const ctx_r0 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275textInterpolate2(" Usuario: ", ctx_r0.user.displayName, " | Email: ", ctx_r0.user.email, " ");
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275property("ngIf", ctx_r0.userRoles.length > 0);
   }
 }
-var CardComponent = class _CardComponent {
-  title = "";
-  subtitle = "";
-  static \u0275fac = function CardComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _CardComponent)();
-  };
-  static \u0275cmp = /* @__PURE__ */ i02.\u0275\u0275defineComponent({ type: _CardComponent, selectors: [["ui-card"]], inputs: { title: "title", subtitle: "subtitle" }, ngContentSelectors: _c1, decls: 4, vars: 1, consts: [[1, "rounded-2xl", "bg-white", "p-4", "shadow-sm", "ring-1", "ring-slate-200/60", "transition-colors", "dark:bg-slate-800", "dark:ring-slate-700/60", "lg:p-6"], ["class", "mb-4 flex flex-col gap-1 lg:flex-row lg:items-center", 4, "ngIf"], [1, "space-y-4", "text-sm", "text-slate-600", "dark:text-slate-200"], [1, "mb-4", "flex", "flex-col", "gap-1", "lg:flex-row", "lg:items-center"], [1, "flex-1"], [1, "text-lg", "font-semibold", "text-slate-900", "dark:text-white"], ["class", "text-sm text-slate-500 dark:text-slate-300", 4, "ngIf"], [1, "text-sm", "text-slate-500", "dark:text-slate-300"]], template: function CardComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      i02.\u0275\u0275projectionDef(_c0);
-      i02.\u0275\u0275elementStart(0, "section", 0);
-      i02.\u0275\u0275template(1, CardComponent_header_1_Template, 6, 2, "header", 1);
-      i02.\u0275\u0275elementStart(2, "div", 2);
-      i02.\u0275\u0275projection(3);
-      i02.\u0275\u0275elementEnd()();
-    }
-    if (rf & 2) {
-      i02.\u0275\u0275advance();
-      i02.\u0275\u0275property("ngIf", ctx.title || ctx.subtitle);
-    }
-  }, dependencies: [NgIf], styles: ["\n\n/*# sourceMappingURL=card.component.css.map */"], changeDetection: 0 });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && i02.\u0275setClassDebugInfo(CardComponent, { className: "CardComponent", filePath: "libs/ui/src/lib/card/card.component.ts", lineNumber: 12 });
-})();
-
-// apps/mfe-iam/src/app/remote-entry/remote-entry.component.ts
-import * as i03 from "@angular/core";
-function RemoteEntryComponent_li_8_Template(rf, ctx) {
+function RemoteEntryComponent_li_17_Template(rf, ctx) {
   if (rf & 1) {
-    i03.\u0275\u0275elementStart(0, "li", 7)(1, "div", 8)(2, "span", 9);
-    i03.\u0275\u0275element(3, "ui-icon", 10);
-    i03.\u0275\u0275elementEnd();
-    i03.\u0275\u0275elementStart(4, "div")(5, "p", 11);
-    i03.\u0275\u0275text(6);
-    i03.\u0275\u0275elementEnd();
-    i03.\u0275\u0275elementStart(7, "p", 12);
-    i03.\u0275\u0275text(8);
-    i03.\u0275\u0275elementEnd()()();
-    i03.\u0275\u0275elementStart(9, "div", 8)(10, "span", 13);
-    i03.\u0275\u0275element(11, "ui-icon", 14);
-    i03.\u0275\u0275text(12);
-    i03.\u0275\u0275elementEnd();
-    i03.\u0275\u0275elementStart(13, "span", 15);
-    i03.\u0275\u0275element(14, "ui-icon", 16);
-    i03.\u0275\u0275text(15);
-    i03.\u0275\u0275elementEnd()()();
+    i0.\u0275\u0275elementStart(0, "li", 16)(1, "div", 17)(2, "span", 18);
+    i0.\u0275\u0275element(3, "ui-icon", 19);
+    i0.\u0275\u0275elementEnd();
+    i0.\u0275\u0275elementStart(4, "div")(5, "p", 20);
+    i0.\u0275\u0275text(6);
+    i0.\u0275\u0275elementEnd();
+    i0.\u0275\u0275elementStart(7, "p", 21);
+    i0.\u0275\u0275text(8);
+    i0.\u0275\u0275elementEnd()()();
+    i0.\u0275\u0275elementStart(9, "div", 17)(10, "span", 22);
+    i0.\u0275\u0275element(11, "ui-icon", 23);
+    i0.\u0275\u0275text(12);
+    i0.\u0275\u0275elementEnd();
+    i0.\u0275\u0275elementStart(13, "span", 24);
+    i0.\u0275\u0275element(14, "ui-icon", 25);
+    i0.\u0275\u0275text(15);
+    i0.\u0275\u0275elementEnd()()();
   }
   if (rf & 2) {
-    const member_r1 = ctx.$implicit;
-    i03.\u0275\u0275advance(6);
-    i03.\u0275\u0275textInterpolate(member_r1.name);
-    i03.\u0275\u0275advance(2);
-    i03.\u0275\u0275textInterpolate(member_r1.email);
-    i03.\u0275\u0275advance(4);
-    i03.\u0275\u0275textInterpolate1(" ", member_r1.role, " ");
-    i03.\u0275\u0275advance(2);
-    i03.\u0275\u0275property("name", member_r1.status === "Activo" ? "verified" : "pending");
-    i03.\u0275\u0275advance();
-    i03.\u0275\u0275textInterpolate1(" ", member_r1.status, " ");
+    const member_r2 = ctx.$implicit;
+    i0.\u0275\u0275advance(6);
+    i0.\u0275\u0275textInterpolate(member_r2.name);
+    i0.\u0275\u0275advance(2);
+    i0.\u0275\u0275textInterpolate(member_r2.email);
+    i0.\u0275\u0275advance(4);
+    i0.\u0275\u0275textInterpolate1(" ", member_r2.role, " ");
+    i0.\u0275\u0275advance(2);
+    i0.\u0275\u0275property("name", member_r2.status === "Activo" ? "verified" : "pending");
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275textInterpolate1(" ", member_r2.status, " ");
   }
 }
 var RemoteEntryComponent = class _RemoteEntryComponent {
+  sessionService;
+  subscription = new Subscription();
+  // Estado de sesión
+  isAuthenticated = false;
+  user = null;
+  sessionStatus = "Verificando...";
+  eventCount = 0;
+  userRoles = [];
   members = [
     { name: "Sandra P\xE1ez", email: "sandra.paez@example.com", role: "Administrador", status: "Activo" },
     { name: "Marco C\xE1rdenas", email: "marco.cardenas@example.com", role: "Auditor", status: "Activo" },
     { name: "Ingrid Flores", email: "ingrid.flores@example.com", role: "Soporte", status: "Invitado" },
     { name: "David Pino", email: "david.pino@example.com", role: "Marketing", status: "Activo" }
   ];
+  constructor(sessionService) {
+    this.sessionService = sessionService;
+    console.log("[MFE-IAM] Component initialized");
+    this.loadSessionData();
+  }
+  ngOnInit() {
+    console.log("[MFE-IAM] OnInit - Setting up session monitoring");
+    this.setupSessionSubscription();
+  }
+  ngOnDestroy() {
+    console.log("[MFE-IAM] OnDestroy - Cleaning up subscriptions");
+    this.subscription.unsubscribe();
+  }
+  loadSessionData() {
+    try {
+      this.isAuthenticated = this.sessionService?.isAuthenticated() ?? false;
+      this.user = this.sessionService?.getUser() ?? null;
+      this.userRoles = this.sessionService?.getRoles() ?? [];
+      if (this.isAuthenticated && this.user) {
+        this.sessionStatus = `\u2705 Sesi\xF3n activa - ${this.user.displayName}`;
+      } else {
+        this.sessionStatus = "\u274C Sin sesi\xF3n activa";
+      }
+      console.log("[MFE-IAM] Session loaded:", {
+        authenticated: this.isAuthenticated,
+        user: this.user?.displayName,
+        roles: this.userRoles,
+        status: this.sessionStatus
+      });
+    } catch (error) {
+      console.error("[MFE-IAM] Error loading session:", error);
+      this.sessionStatus = "\u26A0\uFE0F Error en sesi\xF3n";
+    }
+  }
+  setupSessionSubscription() {
+    if (this.sessionService) {
+      this.subscription.add(this.sessionService.onSessionChange().subscribe((event) => {
+        this.eventCount++;
+        console.log("[MFE-IAM] Session event received:", event.type, event);
+        this.loadSessionData();
+      }));
+    }
+  }
   static \u0275fac = function RemoteEntryComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _RemoteEntryComponent)();
+    return new (__ngFactoryType__ || _RemoteEntryComponent)(i0.\u0275\u0275directiveInject(i1.SessionService));
   };
-  static \u0275cmp = /* @__PURE__ */ i03.\u0275\u0275defineComponent({ type: _RemoteEntryComponent, selectors: [["mfe-iam-entry"]], decls: 9, vars: 1, consts: [[1, "space-y-6"], [1, "flex", "flex-col", "gap-2"], [1, "text-2xl", "font-semibold", "text-slate-900", "dark:text-white"], [1, "text-sm", "text-slate-500", "dark:text-slate-300"], ["title", "Miembros", "subtitle", "4 roles activos"], [1, "divide-y", "divide-slate-200", "dark:divide-slate-700"], ["class", "flex flex-col gap-3 py-3 md:flex-row md:items-center md:justify-between", 4, "ngFor", "ngForOf"], [1, "flex", "flex-col", "gap-3", "py-3", "md:flex-row", "md:items-center", "md:justify-between"], [1, "flex", "items-center", "gap-3"], [1, "flex", "h-10", "w-10", "items-center", "justify-center", "rounded-full", "bg-indigo-100", "text-indigo-600", "dark:bg-indigo-500/20", "dark:text-indigo-200"], ["name", "person", "size", "sm"], [1, "font-medium", "text-slate-900", "dark:text-white"], [1, "text-xs", "text-slate-500", "dark:text-slate-300"], [1, "inline-flex", "items-center", "gap-2", "rounded-full", "bg-slate-100", "px-3", "py-1", "text-xs", "font-medium", "text-slate-600", "dark:bg-slate-800", "dark:text-slate-200"], ["name", "workspace_premium", "size", "sm"], [1, "text-xs", "text-slate-400"], ["size", "sm", 3, "name"]], template: function RemoteEntryComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ i0.\u0275\u0275defineComponent({ type: _RemoteEntryComponent, selectors: [["mfe-iam-entry"]], decls: 18, vars: 4, consts: [[1, "space-y-6"], [1, "bg-purple-50", "dark:bg-purple-950", "border", "border-purple-200", "dark:border-purple-800", "rounded-lg", "p-4", "text-sm"], [1, "flex", "items-center", "justify-between"], [1, "font-medium", "text-purple-900", "dark:text-purple-100"], [1, "text-xs", "bg-purple-100", "dark:bg-purple-900", "px-2", "py-1", "rounded"], [1, "text-purple-700", "dark:text-purple-300", "mt-1"], ["class", "text-xs text-purple-600 dark:text-purple-400 mt-2", 4, "ngIf"], [1, "flex", "flex-col", "gap-2"], [1, "text-2xl", "font-semibold", "text-slate-900", "dark:text-white"], [1, "text-sm", "text-slate-500", "dark:text-slate-300"], ["title", "Miembros", "subtitle", "4 roles activos"], [1, "divide-y", "divide-slate-200", "dark:divide-slate-700"], ["class", "flex flex-col gap-3 py-3 md:flex-row md:items-center md:justify-between", 4, "ngFor", "ngForOf"], [1, "text-xs", "text-purple-600", "dark:text-purple-400", "mt-2"], ["class", "mt-1", 4, "ngIf"], [1, "mt-1"], [1, "flex", "flex-col", "gap-3", "py-3", "md:flex-row", "md:items-center", "md:justify-between"], [1, "flex", "items-center", "gap-3"], [1, "flex", "h-10", "w-10", "items-center", "justify-center", "rounded-full", "bg-indigo-100", "text-indigo-600", "dark:bg-indigo-500/20", "dark:text-indigo-200"], ["name", "person", "size", "sm"], [1, "font-medium", "text-slate-900", "dark:text-white"], [1, "text-xs", "text-slate-500", "dark:text-slate-300"], [1, "inline-flex", "items-center", "gap-2", "rounded-full", "bg-slate-100", "px-3", "py-1", "text-xs", "font-medium", "text-slate-600", "dark:bg-slate-800", "dark:text-slate-200"], ["name", "workspace_premium", "size", "sm"], [1, "text-xs", "text-slate-400"], ["size", "sm", 3, "name"]], template: function RemoteEntryComponent_Template(rf, ctx) {
     if (rf & 1) {
-      i03.\u0275\u0275elementStart(0, "section", 0)(1, "header", 1)(2, "h1", 2);
-      i03.\u0275\u0275text(3, "Identity & Access");
-      i03.\u0275\u0275elementEnd();
-      i03.\u0275\u0275elementStart(4, "p", 3);
-      i03.\u0275\u0275text(5, " Controla roles, accesos y estados de las cuentas. ");
-      i03.\u0275\u0275elementEnd()();
-      i03.\u0275\u0275elementStart(6, "ui-card", 4)(7, "ul", 5);
-      i03.\u0275\u0275template(8, RemoteEntryComponent_li_8_Template, 16, 5, "li", 6);
-      i03.\u0275\u0275elementEnd()()();
+      i0.\u0275\u0275elementStart(0, "section", 0)(1, "div", 1)(2, "div", 2)(3, "span", 3);
+      i0.\u0275\u0275text(4, "\u{1F510} MFE IAM - Estado de Sesi\xF3n Compartida");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(5, "span", 4);
+      i0.\u0275\u0275text(6);
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(7, "p", 5);
+      i0.\u0275\u0275text(8);
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275template(9, RemoteEntryComponent_div_9_Template, 3, 3, "div", 6);
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(10, "header", 7)(11, "h1", 8);
+      i0.\u0275\u0275text(12, "Identity & Access");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(13, "p", 9);
+      i0.\u0275\u0275text(14, " Controla roles, accesos y estados de las cuentas. ");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(15, "ui-card", 10)(16, "ul", 11);
+      i0.\u0275\u0275template(17, RemoteEntryComponent_li_17_Template, 16, 5, "li", 12);
+      i0.\u0275\u0275elementEnd()()();
     }
     if (rf & 2) {
-      i03.\u0275\u0275advance(8);
-      i03.\u0275\u0275property("ngForOf", ctx.members);
+      i0.\u0275\u0275advance(6);
+      i0.\u0275\u0275textInterpolate1("", ctx.eventCount, " eventos");
+      i0.\u0275\u0275advance(2);
+      i0.\u0275\u0275textInterpolate(ctx.sessionStatus);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275property("ngIf", ctx.user);
+      i0.\u0275\u0275advance(8);
+      i0.\u0275\u0275property("ngForOf", ctx.members);
     }
-  }, dependencies: [NgFor, CardComponent, IconComponent], styles: ["\n\n/*# sourceMappingURL=remote-entry.component.css.map */"], changeDetection: 0 });
+  }, dependencies: [NgFor, CommonModule, i2.NgIf, CardComponent, IconComponent], styles: ["\n\n/*# sourceMappingURL=remote-entry.component.css.map */"], changeDetection: 0 });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && i03.\u0275setClassDebugInfo(RemoteEntryComponent, { className: "RemoteEntryComponent", filePath: "apps/mfe-iam/src/app/remote-entry/remote-entry.component.ts", lineNumber: 20 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassDebugInfo(RemoteEntryComponent, { className: "RemoteEntryComponent", filePath: "apps/mfe-iam/src/app/remote-entry/remote-entry.component.ts", lineNumber: 22 });
 })();
 export {
   RemoteEntryComponent

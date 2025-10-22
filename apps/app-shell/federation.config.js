@@ -4,6 +4,33 @@ module.exports = withNativeFederation({
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    
+    // Configuración específica para el SessionService
+    '@app/session-service': {
+      singleton: true,
+      eager: true,
+      strictVersion: true
+    },
+    
+    // Asegurarse que RxJS sea singleton para el manejo de observables
+    'rxjs': {
+      singleton: true,
+      eager: false,
+      strictVersion: true
+    },
+    
+    // Compartir las librerías MSAL
+    '@azure/msal-browser': {
+      singleton: true,
+      eager: true,
+      strictVersion: true
+    },
+    
+    '@azure/msal-angular': {
+      singleton: true,
+      eager: true,
+      strictVersion: true
+    }
   },
 
   skip: [

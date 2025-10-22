@@ -3,71 +3,71 @@
   "shared": [
     {
       "packageName": "@angular/common",
-      "outFileName": "_angular_common.zwucpPgziM-dev.js",
+      "outFileName": "_angular_common.rnFZxmWsmi-dev.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": true,
-      "version": "20.3.3"
+      "version": "20.3.4"
     },
     {
       "packageName": "@angular/common/http",
-      "outFileName": "_angular_common_http.X3f_xnRcmZ-dev.js",
+      "outFileName": "_angular_common_http.cuOx9MzAmq-dev.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": true,
-      "version": "20.3.3"
+      "version": "20.3.4"
     },
     {
       "packageName": "@angular/core",
-      "outFileName": "_angular_core.0vmvnAA1h2-dev.js",
+      "outFileName": "_angular_core._F9LyDwCi6-dev.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": true,
-      "version": "20.3.3"
+      "version": "20.3.4"
     },
     {
       "packageName": "@angular/core/primitives/di",
-      "outFileName": "_angular_core_primitives_di.l7nETnOLov-dev.js",
+      "outFileName": "_angular_core_primitives_di.ZayBGTkNuD-dev.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": true,
-      "version": "20.3.3"
+      "version": "20.3.4"
     },
     {
       "packageName": "@angular/core/primitives/signals",
-      "outFileName": "_angular_core_primitives_signals.leCqfqjfI5-dev.js",
+      "outFileName": "_angular_core_primitives_signals.-xiJKc8Ep4-dev.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": true,
-      "version": "20.3.3"
+      "version": "20.3.4"
     },
     {
       "packageName": "@angular/platform-browser",
-      "outFileName": "_angular_platform_browser.B_NAGJ67hy-dev.js",
+      "outFileName": "_angular_platform_browser.lXwR0UZ6Fh-dev.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": true,
-      "version": "20.3.3"
+      "version": "20.3.4"
     },
     {
       "packageName": "@angular/router",
-      "outFileName": "_angular_router.P6ASXZ6fKt-dev.js",
+      "outFileName": "_angular_router.IdW_gz1ukM-dev.js",
       "requiredVersion": "^20.3.0",
       "singleton": true,
       "strictVersion": true,
-      "version": "20.3.3"
+      "version": "20.3.4"
     },
     {
       "packageName": "rxjs",
-      "outFileName": "rxjs.RG8V4JGXwk-dev.js",
-      "requiredVersion": "~7.8.0",
+      "outFileName": "rxjs.qJkxydE75D-dev.js",
+      "requiredVersion": "auto",
       "singleton": true,
       "strictVersion": true,
       "version": "7.8.2"
     },
     {
       "packageName": "rxjs/operators",
-      "outFileName": "rxjs_operators.OzoihGvoRq-dev.js",
+      "outFileName": "rxjs_operators.Vid_9rPB5q-dev.js",
       "requiredVersion": "~7.8.0",
       "singleton": true,
       "strictVersion": true,
@@ -75,7 +75,7 @@
     },
     {
       "packageName": "tslib",
-      "outFileName": "tslib.CdnIm8r6oy-dev.js",
+      "outFileName": "tslib.Uel7F8Z9LY-dev.js",
       "requiredVersion": "^2.3.0",
       "singleton": true,
       "strictVersion": true,
@@ -86,24 +86,24 @@
       "strictVersion": false,
       "requiredVersion": "0.0.0",
       "version": "0.0.0",
-      "packageName": "@nf-internal/chunk-GIH3LZ2C",
-      "outFileName": "chunk-GIH3LZ2C.js"
+      "packageName": "@nf-internal/chunk-Y64QMGUR",
+      "outFileName": "chunk-Y64QMGUR.js"
     },
     {
       "singleton": false,
       "strictVersion": false,
       "requiredVersion": "0.0.0",
       "version": "0.0.0",
-      "packageName": "@nf-internal/chunk-6LPEVOYQ",
-      "outFileName": "chunk-6LPEVOYQ.js"
+      "packageName": "@nf-internal/chunk-HBVTYYLP",
+      "outFileName": "chunk-HBVTYYLP.js"
     },
     {
       "singleton": false,
       "strictVersion": false,
       "requiredVersion": "0.0.0",
       "version": "0.0.0",
-      "packageName": "@nf-internal/chunk-V5X25UG3",
-      "outFileName": "chunk-V5X25UG3.js"
+      "packageName": "@nf-internal/chunk-4JERHOJJ",
+      "outFileName": "chunk-4JERHOJJ.js"
     },
     {
       "singleton": false,
@@ -120,6 +120,28 @@
       "version": "0.0.0",
       "packageName": "@nf-internal/chunk-WDMUDEB6",
       "outFileName": "chunk-WDMUDEB6.js"
+    },
+    {
+      "packageName": "@appshell/ui",
+      "outFileName": "_appshell_ui.js",
+      "requiredVersion": "",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "",
+      "dev": {
+        "entryPoint": "D:/ADN/Projects/appshell-project-mfe.git-/libs/ui/src/public-api"
+      }
+    },
+    {
+      "packageName": "@app/session-service",
+      "outFileName": "_app_session_service.js",
+      "requiredVersion": "",
+      "singleton": true,
+      "strictVersion": false,
+      "version": "",
+      "dev": {
+        "entryPoint": "D:/ADN/Projects/appshell-project-mfe.git-/libs/session-service/src/public-api"
+      }
     }
   ],
   "exposes": [
@@ -127,7 +149,7 @@
       "key": "./Component",
       "outFileName": "Component.js",
       "dev": {
-        "entryPoint": "/Users/aldo/Aldo_en_mi_mac/ADNDigital/AppShell/AppShell-DevSacom/apps/mfe-iam/src/app/remote-entry/remote-entry.component.ts"
+        "entryPoint": "D:/ADN/Projects/appshell-project-mfe.git-/apps/mfe-iam/src/app/remote-entry/remote-entry.component.ts"
       }
     }
   ],
