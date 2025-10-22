@@ -10,6 +10,20 @@ module.exports = withNativeFederation({
 
   shared: {
     ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    
+    // Configuración específica para el SessionService compartido
+    '@app/session-service': {
+      singleton: true,
+      eager: true,
+      strictVersion: true
+    },
+    
+    // Asegurarse que RxJS sea singleton
+    'rxjs': {
+      singleton: true,
+      eager: false,
+      strictVersion: true
+    }
   },
 
   skip: [

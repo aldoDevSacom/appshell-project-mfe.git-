@@ -8,6 +8,7 @@ import { IconComponent, ButtonComponent } from '@appshell/ui';
 import { ThemeService } from '../../core/services/theme.service';
 import { AppStateService } from '../../core/services/app-state.service';
 import { DASHBOARD_ICONS, DashboardIconName } from '../dashboard-icons';
+import { UserInfoComponent } from '../../shared/components/user-info/user-info.component';
 
 const MODULE_GRADIENTS: Record<string, string> = {
   dashboard: 'from-indigo-500 to-purple-500',
@@ -20,7 +21,7 @@ const MODULE_GRADIENTS: Record<string, string> = {
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FormsModule, NgClass, NgFor, NgIf, RouterLink, IconComponent, ButtonComponent],
+  imports: [FormsModule, NgClass, NgFor, NgIf, RouterLink, IconComponent, ButtonComponent, UserInfoComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush

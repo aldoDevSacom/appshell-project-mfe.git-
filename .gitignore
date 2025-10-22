@@ -8,3 +8,7 @@ npm-debug.log*
 build/
 dist/
 tmp/
+node_modules/@algolia/abtesting/README.md
+
+# Markdown files
+*.md

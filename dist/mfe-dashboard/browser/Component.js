@@ -1,5 +1,7 @@
 // apps/mfe-dashboard/src/app/remote-entry/remote-entry.component.ts
-import { ChangeDetectionStrategy as ChangeDetectionStrategy5, Component as Component5 } from "@angular/core";
+import { ChangeDetectionStrategy as ChangeDetectionStrategy5, Component as Component5, inject } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Subscription } from "rxjs";
 
 // apps/mfe-dashboard/src/app/components/dashboard-layout/dashboard-layout.ts
 import { ChangeDetectionStrategy as ChangeDetectionStrategy4, Component as Component4 } from "@angular/core";
@@ -191,19 +193,149 @@ var DashboardLayout = class _DashboardLayout {
 })();
 
 // apps/mfe-dashboard/src/app/remote-entry/remote-entry.component.ts
+import { SessionService, SessionEventType } from "@app/session-service";
 import * as i05 from "@angular/core";
+import * as i1 from "@angular/common";
+function RemoteEntryComponent_span_7_Template(rf, ctx) {
+  if (rf & 1) {
+    i05.\u0275\u0275elementStart(0, "span", 6);
+    i05.\u0275\u0275text(1);
+    i05.\u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r0 = i05.\u0275\u0275nextContext();
+    i05.\u0275\u0275advance();
+    i05.\u0275\u0275textInterpolate(ctx_r0.user.displayName);
+  }
+}
 var RemoteEntryComponent = class _RemoteEntryComponent {
+  // Inyectar SessionService
+  sessionService = inject(SessionService);
+  subscription = new Subscription();
+  // Estado del componente
+  isAuthenticated = false;
+  user = null;
+  roles = [];
+  hasToken = false;
+  eventCount = 0;
+  showDebug = true;
+  // Cambiar a false en producción
+  // Propiedades computadas para la UI
+  get sessionStatusClass() {
+    if (!this.isAuthenticated)
+      return "not-authenticated";
+    if (this.user)
+      return "authenticated";
+    return "loading";
+  }
+  get sessionIcon() {
+    if (!this.isAuthenticated)
+      return "\u{1F512}";
+    if (this.user)
+      return "\u2705";
+    return "\u23F3";
+  }
+  get sessionStatusText() {
+    if (!this.isAuthenticated)
+      return "No autenticado";
+    if (this.user)
+      return "Sesi\xF3n activa";
+    return "Cargando...";
+  }
+  ngOnInit() {
+    console.log("\u{1F3D7}\uFE0F MFE Dashboard: Inicializando con SessionService compartido");
+    if (!this.sessionService) {
+      console.error("\u274C MFE Dashboard: SessionService no est\xE1 disponible!");
+      return;
+    }
+    console.log("\u2705 MFE Dashboard: SessionService detectado, configurando suscripciones...");
+    this.loadSessionState();
+    this.subscribeToSessionChanges();
+  }
+  ngOnDestroy() {
+    console.log("\u{1F9F9} MFE Dashboard: Limpiando suscripciones");
+    this.subscription.unsubscribe();
+  }
+  loadSessionState() {
+    try {
+      this.isAuthenticated = this.sessionService.isAuthenticated();
+      this.user = this.sessionService.getUser();
+      this.roles = this.sessionService.getRoles();
+      this.hasToken = !!this.sessionService.getToken();
+      console.log("\u{1F4CA} MFE Dashboard: Estado de sesi\xF3n cargado", {
+        isAuthenticated: this.isAuthenticated,
+        user: this.user?.displayName,
+        roles: this.roles,
+        hasToken: this.hasToken
+      });
+    } catch (error) {
+      console.error("\u274C MFE Dashboard: Error al cargar estado de sesi\xF3n", error);
+    }
+  }
+  subscribeToSessionChanges() {
+    this.subscription.add(this.sessionService.onSessionChange().subscribe((event) => {
+      this.eventCount++;
+      console.log("\u{1F514} MFE Dashboard: Evento de sesi\xF3n recibido", event);
+      switch (event.type) {
+        case SessionEventType.LOGIN_SUCCESS:
+          console.log("\u2705 MFE Dashboard: Login exitoso detectado");
+          this.loadSessionState();
+          break;
+        case SessionEventType.LOGOUT:
+          console.log("\u{1F6AA} MFE Dashboard: Logout detectado");
+          this.clearSessionState();
+          break;
+        case SessionEventType.TOKEN_REFRESHED:
+          console.log("\u{1F504} MFE Dashboard: Token renovado");
+          this.loadSessionState();
+          break;
+        case SessionEventType.SESSION_EXPIRED:
+          console.log("\u23F0 MFE Dashboard: Sesi\xF3n expirada");
+          this.clearSessionState();
+          break;
+        case SessionEventType.USER_SWITCHED:
+          console.log("\u{1F464} MFE Dashboard: Usuario cambiado");
+          this.loadSessionState();
+          break;
+      }
+    }));
+  }
+  clearSessionState() {
+    this.isAuthenticated = false;
+    this.user = null;
+    this.roles = [];
+    this.hasToken = false;
+  }
   static \u0275fac = function RemoteEntryComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _RemoteEntryComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ i05.\u0275\u0275defineComponent({ type: _RemoteEntryComponent, selectors: [["mfe-dashboard-entry"]], decls: 1, vars: 0, template: function RemoteEntryComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ i05.\u0275\u0275defineComponent({ type: _RemoteEntryComponent, selectors: [["mfe-dashboard-entry"]], decls: 9, vars: 4, consts: [[1, "mfe-dashboard-container"], [1, "session-indicator", 3, "ngClass"], [1, "session-info"], [1, "status-icon"], [1, "status-text"], ["class", "user-name", 4, "ngIf"], [1, "user-name"]], template: function RemoteEntryComponent_Template(rf, ctx) {
     if (rf & 1) {
-      i05.\u0275\u0275element(0, "app-dashboard-layout");
+      i05.\u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "span", 3);
+      i05.\u0275\u0275text(4);
+      i05.\u0275\u0275elementEnd();
+      i05.\u0275\u0275elementStart(5, "span", 4);
+      i05.\u0275\u0275text(6);
+      i05.\u0275\u0275elementEnd();
+      i05.\u0275\u0275template(7, RemoteEntryComponent_span_7_Template, 2, 1, "span", 5);
+      i05.\u0275\u0275elementEnd()();
+      i05.\u0275\u0275element(8, "app-dashboard-layout");
+      i05.\u0275\u0275elementEnd();
     }
-  }, dependencies: [DashboardLayout], styles: ["\n\n/*# sourceMappingURL=remote-entry.component.css.map */"], changeDetection: 0 });
+    if (rf & 2) {
+      i05.\u0275\u0275advance();
+      i05.\u0275\u0275property("ngClass", ctx.sessionStatusClass);
+      i05.\u0275\u0275advance(3);
+      i05.\u0275\u0275textInterpolate(ctx.sessionIcon);
+      i05.\u0275\u0275advance(2);
+      i05.\u0275\u0275textInterpolate(ctx.sessionStatusText);
+      i05.\u0275\u0275advance();
+      i05.\u0275\u0275property("ngIf", ctx.user);
+    }
+  }, dependencies: [CommonModule, i1.NgClass, i1.NgIf, DashboardLayout], styles: ["\n\n.mfe-dashboard-container[_ngcontent-%COMP%] {\n  position: relative;\n}\n.session-indicator[_ngcontent-%COMP%] {\n  position: fixed;\n  top: 10px;\n  right: 10px;\n  z-index: 1000;\n  padding: 8px 12px;\n  border-radius: 20px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  transition: all 0.3s ease;\n}\n.session-indicator.authenticated[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #10b981,\n      #059669);\n  color: white;\n  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);\n}\n.session-indicator.not-authenticated[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #ef4444,\n      #dc2626);\n  color: white;\n  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);\n}\n.session-indicator.loading[_ngcontent-%COMP%] {\n  background:\n    linear-gradient(\n      135deg,\n      #f59e0b,\n      #d97706);\n  color: white;\n  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);\n}\n.session-info[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n.status-icon[_ngcontent-%COMP%] {\n  font-size: 14px;\n}\n.user-name[_ngcontent-%COMP%] {\n  margin-left: 4px;\n  opacity: 0.9;\n}\n.debug-panel[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 10px;\n  right: 10px;\n  background: rgba(0, 0, 0, 0.9);\n  color: white;\n  padding: 12px;\n  border-radius: 8px;\n  font-size: 11px;\n  max-width: 300px;\n  z-index: 999;\n}\n.debug-panel[_ngcontent-%COMP%]   h4[_ngcontent-%COMP%] {\n  margin: 0 0 8px 0;\n  color: #60a5fa;\n}\n.debug-panel[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 4px 0;\n}\n/*# sourceMappingURL=remote-entry.component.css.map */"], changeDetection: 0 });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && i05.\u0275setClassDebugInfo(RemoteEntryComponent, { className: "RemoteEntryComponent", filePath: "apps/mfe-dashboard/src/app/remote-entry/remote-entry.component.ts", lineNumber: 13 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && i05.\u0275setClassDebugInfo(RemoteEntryComponent, { className: "RemoteEntryComponent", filePath: "apps/mfe-dashboard/src/app/remote-entry/remote-entry.component.ts", lineNumber: 106 });
 })();
 export {
   RemoteEntryComponent

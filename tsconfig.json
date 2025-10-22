@@ -18,6 +18,9 @@
     "paths": {
       "@appshell/ui": [
         "libs/ui/src/public-api"
+      ],
+      "@app/session-service": [
+        "libs/session-service/src/public-api"
       ]
     }
   },
