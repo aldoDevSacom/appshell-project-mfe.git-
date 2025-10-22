@@ -33,5 +33,21 @@ export const routes: Routes = [
       ...childRoutes
     ]
   },
+  {
+    path: 'unauthorized',
+    loadComponent: () =>
+      import('./features/unauthorized/unauthorized.component').then((m) => m.UnauthorizedComponent),
+    data: {
+      title: 'Token inválido'
+    }
+  },
+  {
+    path: 'access-denied',
+    loadComponent: () =>
+      import('./features/access-denied/access-denied.component').then((m) => m.AccessDeniedComponent),
+    data: {
+      title: 'Acceso denegado'
+    }
+  },
   { path: '**', redirectTo: defaultPath }
 ];
