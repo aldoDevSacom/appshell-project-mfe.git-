@@ -1,14 +1,278 @@
-# Node.js
+# ==========================================
+# Node.js & Dependencies
+# ==========================================
 node_modules/
-
-# Optional: Log files, build artifacts, etc.
 npm-debug.log*
-.DS_Store
-.angular
-build/
-dist/
-tmp/
-node_modules/@algolia/abtesting/README.md
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
 
-# Markdown files
-*.md
+# Package manager lock files (optional - keep if team agrees)
+# Uncomment the next line if you want to ignore lock files
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ==========================================
+# Angular Build Outputs
+# ==========================================
+/dist/
+/tmp/
+/out-tsc/
+/build/
+/bazel-out/
+
+# Angular cache
+.angular/
+.angular/cache/
+
+# Compiled output
+*.js.map
+*.css.map
+
+# ==========================================
+# Testing & Coverage
+# ==========================================
+/coverage/
+/.nyc_output/
+/test-results/
+/dist/test-out/
+
+# Karma
+/karma-*.log
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+# ==========================================
+# IDEs & Editors
+# ==========================================
+# VSCode
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# JetBrains IDEs (WebStorm, IntelliJ, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+out/
+
+# Vim
+*.swp
+*.swo
+*~
+.*.sw[a-p]
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# ==========================================
+# Operating System Files
+# ==========================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+Icon
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+.nfs*
+
+# ==========================================
+# Environment & Configuration
+# ==========================================
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env.*.local
+
+# Firebase
+.firebase/
+.firebaserc
+firebase-debug.log
+firebase-debug.*.log
+firestore-debug.log
+ui-debug.log
+firestore.indexes.json
+firestore.rules
+
+# ==========================================
+# Logs
+# ==========================================
+*.log
+logs/
+*.log.*
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ==========================================
+# Temporary & Cache Files
+# ==========================================
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+.sass-cache/
+.stylelintcache
+.eslintcache
+.node_repl_history
+.yarn-integrity
+
+# TypeScript cache
+*.tsbuildinfo
+
+# ==========================================
+# Native Federation & Module Federation
+# ==========================================
+node_modules/.cache/
+node_modules/.cache/native-federation/
+
+# Federation artifacts
+remoteEntry.json
+importmap.json
+
+# ==========================================
+# Microfrontend specific
+# ==========================================
+# Exclude compiled MFE bundles if needed
+# /dist/mfe-*/
+
+# ==========================================
+# Miscellaneous
+# ==========================================
+# Compressed files
+*.tgz
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# System Files
+*.stackdump
+core
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variable files
+.env*
+
+# Storybook
+storybook-static/
+
+# ==========================================
+# CI/CD & Deployment
+# ==========================================
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+.vscode-test
+.history/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terragrunt-cache/
+
+# ==========================================
+# Documentation (DO NOT IGNORE)
+# ==========================================
+# Keep important markdown files
+!README.md
+!CHANGELOG.md
+!CONTRIBUTING.md
+!LICENSE.md
+!docs/**/*.md
+
+# But ignore markdown in node_modules
+node_modules/**/*.md
+
+# ==========================================
+# Security & Secrets
+# ==========================================
+*.pem
+*.key
+*.cert
+*.crt
+.npmrc
+.yarnrc
+
+# Local SSL certificates
+ssl/
+certs/
+
+# Credentials
+credentials.json
+service-account.json
+*.credentials
+
+# ==========================================
+# Backup Files
+# ==========================================
+*.bak
+*.backup
+*.old
+*_backup
+*_old
+
+# ==========================================
+# Project Specific
+# ==========================================
+# Add any project-specific ignores below
+# Example: /custom-build-output/
