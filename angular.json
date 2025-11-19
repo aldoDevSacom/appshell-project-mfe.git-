@@ -58,6 +58,7 @@
 				"esbuild": {
 					"builder": "@angular/build:application",
 					"options": {
+						"outputPath": "dist/app-shell",
 						"browser": "apps/app-shell/src/main.ts",
 						"polyfills": [
 							"zone.js",
@@ -72,7 +73,8 @@
 						],
 						"styles": [
 							"apps/app-shell/src/styles.css"
-						]
+						],
+						"index": "apps/app-shell/src/index.html"
 					},
 					"configurations": {
 						"production": {
@@ -191,7 +193,9 @@
 						],
 						"styles": [
 							"apps/mfe-dashboard/src/styles.css"
-						]
+						],
+						"outputPath": "dist/mfe-dashboard",
+						"index": "apps/mfe-dashboard/src/index.html"
 					},
 					"configurations": {
 						"production": {
@@ -303,7 +307,9 @@
 						],
 						"styles": [
 							"apps/mfe-tasks/src/styles.css"
-						]
+						],
+						"outputPath": "dist/mfe-tasks",
+						"index": "apps/mfe-tasks/src/index.html"
 					},
 					"configurations": {
 						"production": {
@@ -415,7 +421,9 @@
 						],
 						"styles": [
 							"apps/mfe-iam/src/styles.css"
-						]
+						],
+						"outputPath": "dist/mfe-iam",
+						"index": "apps/mfe-iam/src/index.html"
 					},
 					"configurations": {
 						"production": {
@@ -527,7 +535,9 @@
 						],
 						"styles": [
 							"apps/mfe-marketing/src/styles.css"
-						]
+						],
+						"outputPath": "dist/mfe-marketing",
+						"index": "apps/mfe-marketing/src/index.html"
 					},
 					"configurations": {
 						"production": {
@@ -586,7 +596,10 @@
 							"tsConfig": "libs/ui/tsconfig.lib.json"
 						}
 					},
-					"defaultConfiguration": "production"
+					"defaultConfiguration": "production",
+					"options": {
+						"project": "libs/ui/ng-package.json"
+					}
 				},
 				"test": {
 					"builder": "@angular/build:karma",
@@ -669,7 +682,9 @@
 						],
 						"styles": [
 							"apps/mfe-billing/src/styles.css"
-						]
+						],
+						"outputPath": "dist/mfe-billing",
+						"index": "apps/mfe-billing/src/index.html"
 					},
 					"configurations": {
 						"production": {

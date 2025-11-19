@@ -17,10 +17,10 @@
     "module": "preserve",
     "paths": {
       "@appshell/ui": [
-        "libs/ui/src/public-api"
+        "libs/ui/src/public-api.ts"
       ],
       "@app/session-service": [
-        "libs/session-service/src/public-api"
+        "libs/session-service/src/public-api.ts"
       ]
     }
   },
