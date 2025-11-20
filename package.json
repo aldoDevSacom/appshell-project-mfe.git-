@@ -10,6 +10,8 @@
     "serve:iam": "ng serve mfe-iam",
     "serve:marketing": "ng serve mfe-marketing",
     "serve:billing": "ng serve mfe-billing",
+    "serve:all": "concurrently -n shell,dash,tasks,iam,mkt,bill \"npm run serve:shell\" \"wait-on http://localhost:4200 && npm run serve:dashboard\" \"wait-on http://localhost:4200 && npm run serve:tasks\" \"wait-on http://localhost:4200 && npm run serve:iam\" \"wait-on http://localhost:4200 && npm run serve:marketing\" \"wait-on http://localhost:4200 && npm run serve:billing\"",
+    "serve:mfes": "concurrently -n dash,tasks,iam,mkt,bill \"npm run serve:dashboard\" \"npm run serve:tasks\" \"npm run serve:iam\" \"npm run serve:marketing\" \"npm run serve:billing\"",
     "build": "npm run build:shell",
     "build:shell": "ng build app-shell",
     "build:dashboard": "ng build mfe-dashboard",
@@ -62,6 +64,7 @@
     "@angular/compiler-cli": "^19.2.15",
     "@types/jasmine": "~5.1.0",
     "autoprefixer": "^10.4.21",
+    "concurrently": "^9.2.1",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -71,6 +74,7 @@
     "ng-packagr": "^19.2.2",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.15",
-    "typescript": "~5.8.0"
+    "typescript": "~5.8.0",
+    "wait-on": "^9.0.3"
   }
 }

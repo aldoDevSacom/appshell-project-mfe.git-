@@ -14,6 +14,7 @@ export const environment = {
     'mfe-tasks': overrides['mfe-tasks'] ?? 'http://localhost:4202/remoteEntry.json',
     'mfe-iam': overrides['mfe-iam'] ?? 'http://localhost:4203/remoteEntry.json',
     'mfe-marketing': overrides['mfe-marketing'] ?? 'http://localhost:4204/remoteEntry.json',
-    'mfe-billing': overrides['mfe-billing'] ?? 'http://localhost:4205/remoteEntry.json'
+    'mfe-billing': overrides['mfe-billing'] ?? 'http://localhost:4205/remoteEntry.json',
+    'mfe-prodapps': overrides['mfe-prodapps'] ?? 'http://localhost:4206/remoteEntry.json'
   }
 } as const;
