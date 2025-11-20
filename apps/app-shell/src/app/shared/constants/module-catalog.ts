@@ -32,6 +32,16 @@ export const MODULE_CATALOG: MenuItem[] = [
     requiredClaim: 'module:billing'
   },
   {
+    id: 'prodapps',
+    label: 'Gestión de Tareas',
+    icon: 'task_alt',
+    kind: 'route',
+    category: 'workflow',
+    route: '/prodapps',
+    remoteName: 'mfe-prodapps'
+    // Sin requiredClaim por ahora (público)
+  },
+  {
     id: 'create-order',
     label: 'Crear Orden',
     icon: 'create',
