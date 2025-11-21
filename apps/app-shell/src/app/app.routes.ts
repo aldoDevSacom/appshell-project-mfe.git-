@@ -19,7 +19,7 @@ const MFE_VALIDATION_COMPONENT = () =>
 
 const remoteModules = MODULE_CATALOG.filter((item) => item.kind === 'route' && item.remoteName);
 
-const childRoutes = remoteModules.map((item) => {
+const baseChildRoutes = remoteModules.map((item) => {
   const path = item.route?.replace(/^\//, '') ?? item.id;
   
   // Configurar guards según los requisitos del módulo
@@ -47,6 +47,50 @@ const childRoutes = remoteModules.map((item) => {
     }
   };
 });
+
+// Para ciertos remotos (p.ej. prodapps) necesitamos capturar rutas hijas arbitrarias (/prodapps/frame/task-list/:id).
+// Agregamos un wildcard interno que apunte al mismo remote.
+const prodappsMatcher = (prefix: string) => (segments: any[]) => {
+  if (segments.length < 3) return null;
+  if (segments[0].path !== prefix) return null;
+
+  const isTaskList = segments[1]?.path === 'frame' && segments[2]?.path === 'task-list';
+  const tokenSegment = segments[3];
+
+  if (isTaskList && tokenSegment) {
+    return {
+      consumed: segments,
+      posParams: { id: tokenSegment }
+    };
+  }
+
+  // Fallback: consume todo bajo el prefijo para otras rutas del remote
+  return { consumed: segments };
+};
+
+const childRoutes = [
+  ...baseChildRoutes,
+  {
+    matcher: prodappsMatcher('prodapps'),
+    loadComponent: ROUTE_COMPONENT,
+    data: {
+      moduleId: 'prodapps',
+      remoteName: 'mfe-prodapps',
+      title: 'Gestión de Tareas',
+      icon: 'task_alt'
+    }
+  },
+  {
+    matcher: prodappsMatcher('frame'),
+    loadComponent: ROUTE_COMPONENT,
+    data: {
+      moduleId: 'prodapps',
+      remoteName: 'mfe-prodapps',
+      title: 'Gestión de Tareas',
+      icon: 'task_alt'
+    }
+  }
+];
 
 const defaultPath = 'login-test'; // childRoutes[0]?.path ?? 'dashboard';
 
