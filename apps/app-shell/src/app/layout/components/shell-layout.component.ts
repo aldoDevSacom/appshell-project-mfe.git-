@@ -15,6 +15,7 @@ import { SidebarComponent } from './sidebar.component';
 })
 export class ShellLayoutComponent {
   readonly mobileSidebarOpen = signal(false);
+  readonly sidebarCollapsed = signal(true);
 
   toggleSidebar(force?: boolean): void {
     if (force === true) {
@@ -24,5 +25,9 @@ export class ShellLayoutComponent {
     } else {
       this.mobileSidebarOpen.update((value) => !value);
     }
+  }
+
+  toggleCollapse(): void {
+    this.sidebarCollapsed.update((value) => !value);
   }
 }

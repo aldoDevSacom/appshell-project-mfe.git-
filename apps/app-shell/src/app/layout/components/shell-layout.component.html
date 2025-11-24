@@ -3,11 +3,20 @@
     <app-header (menuToggle)="toggleSidebar()"></app-header>
 
     <div class="flex flex-1 gap-4 px-6 py-5">
-      <app-sidebar
-        class="hidden w-80 lg:block"
-      ></app-sidebar>
+      <div class="relative hidden lg:block">
+        <button
+          type="button"
+          class="collapse-toggle absolute -right-3 top-4 z-10 rounded-full bg-white/90 px-2 py-1 text-xs font-semibold text-slate-700 shadow-md ring-1 ring-slate-200 transition hover:bg-slate-100"
+          (click)="toggleCollapse()"
+        >
+          {{ sidebarCollapsed() ? '>' : '<' }}
+        </button>
+        <app-sidebar
+          [collapsed]="sidebarCollapsed()"
+        ></app-sidebar>
+      </div>
 
-      <div class="flex min-h-[700px] flex-1 flex-col rounded-3xl bg-white/60 px-4 py-8 card-shadow backdrop-blur-sm dark:bg-slate-900/70">
+      <div class="shell-content flex min-h-[700px] flex-1 flex-col rounded-3xl bg-white/60 px-4 py-8 card-shadow backdrop-blur-sm dark:bg-slate-900/70">
         <router-outlet></router-outlet>
       </div>
     </div>
@@ -19,6 +28,7 @@
       <app-sidebar
         class="h-full w-full"
         [mobileOpen]="true"
+        [collapsed]="false"
         (closeMenu)="toggleSidebar(false)"
       ></app-sidebar>
     </div>

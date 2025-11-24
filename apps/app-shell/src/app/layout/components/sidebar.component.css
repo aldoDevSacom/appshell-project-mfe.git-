@@ -1,1 +1,21 @@
-/* Styles rely on utility classes and component inputs */
+.sidebar-collapsed {
+  width: 5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.sidebar-collapsed .section-title {
+  display: none;
+}
+
+.sidebar-collapsed .item-label {
+  display: none;
+}
+
+.sidebar-collapsed .menu-section {
+  gap: 0.5rem;
+}
+
+.sidebar-collapsed .menu-link {
+  justify-content: center;
+}

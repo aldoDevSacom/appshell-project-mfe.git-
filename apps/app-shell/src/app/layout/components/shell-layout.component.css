@@ -1,1 +1,9 @@
 /* Styles rely on utility classes and component inputs */
+.collapse-toggle {
+  width: 2rem;
+}
+
+.shell-content {
+  overflow-x: auto;
+  max-width: 100%;
+}

@@ -21,6 +21,7 @@ import { MenuItem, MenuSection } from '../../shared/models/menu-item.model';
 })
 export class SidebarComponent {
   @Input() mobileOpen = false;
+  @Input() collapsed = true;
   @Output() closeMenu = new EventEmitter<void>();
 
   private readonly appState = inject(AppStateService);
@@ -66,6 +67,14 @@ export class SidebarComponent {
     }
 
     return this.iconCache.get(icon)!;
+  }
+
+  protected linkClasses(item: MenuItem): string {
+    const base =
+      'menu-link flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium leading-normal text-[#111418] transition hover:bg-slate-100 hover:text-slate-900 dark:text-slate-200 dark:hover:bg-slate-800';
+    const active = this.isActive(item) ? 'active text-white shadow-lg' : '';
+    const collapsed = this.collapsed ? 'justify-center px-2' : '';
+    return `${base} ${active} ${collapsed}`;
   }
 
   @HostListener('keydown.escape')
