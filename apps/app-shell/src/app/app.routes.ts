@@ -69,7 +69,7 @@ const prodappsMatcher = (prefix: string) => (segments: any[]) => {
 };
 
 const childRoutes = [
-  ...baseChildRoutes,
+  // Los matchers específicos primero para capturar rutas largas (/prodapps/frame/task-list/:id)
   {
     matcher: prodappsMatcher('prodapps'),
     loadComponent: ROUTE_COMPONENT,
@@ -89,7 +89,9 @@ const childRoutes = [
       title: 'Gestión de Tareas',
       icon: 'task_alt'
     }
-  }
+  },
+  // Resto de módulos
+  ...baseChildRoutes
 ];
 
 const defaultPath = 'login-test'; // childRoutes[0]?.path ?? 'dashboard';
