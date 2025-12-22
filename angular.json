@@ -30,7 +30,7 @@
             "target": "app-shell:serve-original:development",
             "rebuildDelay": 0,
             "dev": true,
-            "port": 0
+            "port": 4200
           }
         },
         "extract-i18n": {
@@ -119,7 +119,8 @@
           },
           "defaultConfiguration": "development",
           "options": {
-            "port": 4200
+            "port": 4200,
+            "proxyConfig": "proxy.conf.json"
           }
         }
       }
